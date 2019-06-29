@@ -8,7 +8,7 @@ class AttendancesController < ApplicationController
   if @attendance.started_at.nil?
     if @attendance.update_attributes(started_at: Time.current.change(sec: 0))
     flash[:info] = "おはようございます！"
-  else
+    else
     flash[:danger] = "勤怠登録に失敗しました。やり直したてください。"
     end
   end
